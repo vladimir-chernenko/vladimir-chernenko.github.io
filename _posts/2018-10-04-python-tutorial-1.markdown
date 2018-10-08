@@ -12,9 +12,9 @@ Make you comfortable, coffee, tea, beer and practice, practice, practice...
 
 Follow this preparation steps:
 1. Register on [https://repl.it/](https://repl.it/)
-2. Create new Python 3 repl, you should see your screen divided into 3 blocks:
+2. Create new Python 3 repl, you should see your screen divided into 3 blocks:  
    Files tree, text editor and black console
-3. Copy and paste this code: `print("Hello World")` and push `run` button.
+3. Copy and paste this code: `print("Hello World")` and push `run` button.  
    You should see that "Hello World" appears in console, like this:
 
 ![Hello World](/assets/hello_world.png)
@@ -29,6 +29,8 @@ Follow this preparation steps:
    3. [Boolean](#boolean)
 3. [Operations with variables](#operations-with-variables)
 4. [Complex variables types](#complex-variables-types)
+   1. [Dictionaries](#dictionaries)
+   2. [Lists](#lists)
 5. [User input](#user-input)
 6. [Conditions](#conditions)
 
@@ -108,6 +110,18 @@ weight = 75
 price = 100.14
 ```
 
+Here is a set of all possible operations with numbers in Python:
+
+```python
+print(2 + 3)  # 5
+print(4 - 3)  # 1
+print(5 / 2)  # 2.5
+print(5 * 2)  # 10
+print(5 ** 2) # 25 - square
+print(5 // 3) # 1 - floor division, try it if you don't understand
+print(5 % 3)  # 2 - remaining from division
+```
+
 ### Strings ##
 
 Strings in Python are represented as text surrounded by double quotes:
@@ -118,7 +132,17 @@ username = "moonchel"
 reservation_number = "ABC123"
 ```
 
-### Boolean ##
+Here is a subset of all possible operations with text:
+
+```python
+text_1 = "Lorem ipsum"
+text_2 = "dolor sit amet"
+
+print(text_1 + " " + text_2)
+
+```
+
+### Booleans ##
 
 Boolean value is describing only two states: `on` or `off`.
 In Python for `on` we use `True` and for `off` we use `False`.
@@ -161,22 +185,14 @@ print(circle_area)
 
 Other available operations:
 
-```python
-print(2 + 3)  # 5
-print(4 - 3)  # 1
-print(5 / 2)  # 2.5
-print(5 * 2)  # 10
-print(5 ** 2)   # 25 - square
-print(5 // 3) # 1 - floor division, try it if you don't understand
-print(5 % 3)  # 2 - remaining from division
-```
 
 ### Text
 
 For now I will show only `+` operator. How we can add 2 or more strings, you can ask? We can join them...
 
 ```python
-print("Hello" + " " + "World") # Hello world - this operation is called concatenation, don't need to remember
+# Hello world - this operation is called concatenation
+print("Hello" + " " + "World")
 ```
 
 ### Boolean
@@ -220,4 +236,243 @@ print(amount_in_czk, 'CZK', 'is equal to', amount_in_eur, 'EUR')
 </details>
 
 
+## Complex variables types ##
+
+### Dictionaries ##
+
+Imagine you often need to translate country name to its abbreviation.  
+So you will create a table like this:
+
+|   |  country name   |  abbreviation  |
+|---|:---------------:|:--------------:|
+| 1 |  Belgium        | BE             |
+| 2 |  Greece         | EL             |
+| 3 |  Portugal       | PT             |
+
+And then use `Find` command to find abbreviation for some country name.  
+This can be described in Python via dictionaries:
+
+```python
+countries_abbs = {
+  "Belgium": "BE",
+  "Greece": "EL",
+  "Portugal": "PT",
+}
+
+print(countries_abbs["Belgium"])  # will print "BE"
+print(countries_abbs["Portugal"]) # will print "PT"
+```
+
+Dictionaries can be used as translation table, another example can be fruit price table:
+
+```python
+fruits_prices = {
+   "apple": 10,
+   "pear": 12,
+   "banana": 13
+}
+
+# cost for 2 apples and 3 pears and 1 banana
+cost = 2 * fruits_prices["apple"] + 3 * fruits_prices["pear"] + fruits_prices["banana"]
+
+print(cost) # what result will be here?
+```
+
+Dictionaries definition has it's own format:
+1. `{}` - this means you defined empty dictionary. 
+2. `{ 'apple': 10, }` - means that your dictionary contains 1 `key: value` (read key-value) pair.
+
+So, please remember format: **figure brackets with key-value pairs separated by comma**.  
+P.S. Notice last comma and don't remember to put it after last key-value pair.
+
+### Lists ##
+
+Imagine you have a list of car prices and need to sum them up in this kind of table:
+
+|     |  price   |
+|-----|:--------:|
+| 1   |  10      |
+| 2   |  11      |
+| 3   |  9       |
+| SUM |  30      |
+
+How this can be described in Python?
+
+```python
+prices = [10, 11, 9]
+
+prices_sum = prices[0] + prices[1] + prices[2]
+
+print(prices_sum) # what result will be here?
+```
+
+As you can see lists represents group of values.  
+Lists has there own definition format:
+1. `[]` - this means you defined an empty list
+2. `[1, 2, 3,]` - this means you defined a list that contains 3 numbers
+
+To access an element in a list you have to use `indexing`. You need to know the index of value.  
+**Indexes in Python are starting from 0**. So for example `prices[0]` is equal to `10`.
+
+
+### 🚀 What time is it? It's TASKs time. 🚀
+
+<details>
+<summary>
+Transform this table to Python dictionary and try to use it:
+
+<table>
+   <thead>
+      <tr>
+         <th>IATA code</th>
+         <th>Airport name</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>TIA</td>
+         <td>Tirana Airport</td>
+      </tr>
+      <tr>
+         <td>EVN</td>
+         <td>Yerevan Zvartnots Airport</td>
+      </tr>
+      <tr>
+         <td>GRZ</td>
+         <td>Graz Airport</td>
+      </tr>
+      <tr>
+         <td>INN</td>
+         <td>Innsbruck Airport</td>
+      </tr>
+   </tbody>
+</table>
+</summary>
+<pre>
+airports_names = {
+   'TIA': 'Tirana Airport',
+   'EVN': 'Yerevan Zvartnots Airport',
+   'GRZ': 'Graz Airport',
+   'INN': 'Innsbruck Airport',
+}
+
+print('These airports', airports_names['TIA'], airports_names['GRZ'], 'are cool!')
+</pre>
+</details>
+
+<details>
+<summary>
+Calculate mean for avocado prices in different states.  
+Your input prices list is: [10, 12, 9, 16]
+</summary>
+<pre>
+avocado_prices = [10, 12, 9, 16]
+avocado_prices_sum = costs[0] + costs[1] + costs[2] + costs[3]
+avocado_prices_mean = avocado_prices_sum / 4
+print('Mean for avocado prices is:', avocado_prices_mean)
+</pre>
+</details>
+
+
+## User input ##
+
+How we can ask user for his name or age? Like this:
+
+```python
+name = input("Hi, what is your name?")
+age = int(input("Hi " + name + ", how old are you?"))
+```
+
+For getting user input from keyboard you need to use `input` function.  
+Inside of it, you *can* define a string, which will tell user what kind of information you want to know.
+
+*Here we store variables for future use. We use `name` variable when asking about age.*
+
+Last thing we need to know, the result of `input` function is always a **string**.  
+To transform it to integer or float use `int` or `float` functions.
+
+
+### 🚀 What time is it? It's TASKs time. 🚀
+
+<details>
+<summary>
+Write a program for converting miles to km, and on start asks user to input miles. Print the result.
+</summary>
+<pre>
+miles = int(input('Miles:'))
+kilometers = miles * 1.60934
+print(kilometers)
+</pre>
+</details>
+
+<details>
+<summary>
+Ask user for 3 numbers and sum them. Print the result.
+</summary>
+<pre>
+number_1 = int(input('1 num:'))
+number_2 = int(input('2 num:'))
+number_3 = int(input('3 num:'))
+
+numbers_sum = number_1 + number_2 + number_3
+print(numbers_sum)
+</pre>
+</details>
+
+<details>
+<summary>
+   Character input - 
+   <a href="https://www.practicepython.org/exercise/2014/01/29/01-character-input.html" target="_blank">
+      Task details
+   </a> 
+</summary>
+</details>
+
+
+## Conditions
+
+How we can control flow of our program? Image you are working at the store, and someone wants to buy alcohol.  
+You will ask them: "How old are you?", and they will respond with some number, hopefully greater then 17.  
+Based on this number you will decide what to do: sell or not to sell. How this can be described in Python?
+
+
+```python
+age = int(input("How old are you?"))
+
+if age > 17:
+   print("Cool enough")
+else:
+   print("Nope, sorry bro")
+```
+
+This called a `condition` statement and has it's own definition format:
+1. Started with `if` word and then a `condition` which must be evaluated to `True` or `False` and **colon**.
+2. Body of `if` when condition is `True`. Please notice that body must be intended to 2 or 4 spaces. 
+   P.S. For `repl.it` by default it is 2 spaces or 1 tab.
+3. `else` with a colon.
+4. Body of else statement. This part and `else:` is not necessary to have. You can have only `if` and body for it.
+
+Other example:
+
+```python
+# double equal sign mean you want to check if what on the left is equal to what on the right
+# so in our case if user will check if user input is equal to yes
+weather_is_rainy = input("Is it rainy out there?") == "yes"
+
+if weather_is_rainy == True:
+  print('Take an umbrella')
+else:
+  print('Don\'t need to')
+```
+
+### 🚀 What time is it? It's TASKs time. 🚀
+
+<details>
+<summary>
+   Odd or even - 
+   <a href="https://www.practicepython.org/exercise/2014/02/05/02-odd-or-even.html" target="_blank">
+      Task details
+   </a> 
+</summary>
+</details>
 
